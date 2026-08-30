@@ -52,7 +52,7 @@ void grid::setObstacle(node position){
 
 
 // 4-directional neighbours of THIS node
-vector<node> getNeighbors(node position){
+std::vector<node> grid::getNeighbors(node position){
     vector<node> neighbours; 
     int row = position.row;
     int col = position.col;
@@ -69,6 +69,7 @@ vector<node> getNeighbors(node position){
     if(isWalkable(node{row, col+1})){
         neighbours.push_back(node{row, col+1});
     }
+    return neighbours;
     
     
 }
