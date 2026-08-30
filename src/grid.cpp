@@ -18,7 +18,7 @@ void grid::print(){
 // takes a grid coordinate and determines if  
 // it is within the bounds of the grid
 bool grid::isValid(node position){ 
-    if(position.row>=this->rows || position.col>=this->cols){
+    if(position.row>=this->rows ||position.row<0 || position.col>=this->cols || position.col<0){
         return false;
     }
     else return true;
@@ -27,12 +27,14 @@ bool grid::isValid(node position){
 // takes a grid coordinate and determines if  
 // agent can traverse through that index
 bool grid::isWalkable(node position){
-    if(this->cells[position.row][position.col]==1){
-        return false;
-    }
-    else{
-        return true;
-    }
+    if(isValid(position))
+        if(this->cells[position.row][position.col]==1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    else return false;
 
 }
 // takes a grid coordinate and
