@@ -25,6 +25,6 @@ public:
     void setObstacle(node position); // for grid inititalisation
     bool isValid(node position); // is this position within range?
     bool isWalkable(node position); // can the agent walk through this position?
-    vector<node> getNeighbors(node position); // neighbouring cells for current cell position
+    std::vector<node> getNeighbors(node position); // neighbouring cells for current cell position
 
 };

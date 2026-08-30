@@ -57,17 +57,19 @@ std::vector<node> grid::getNeighbors(node position){
     int row = position.row;
     int col = position.col;
 
-    if(isWalkable(node{row-1, col})){
-        neighbours.push_back(node{row-1, col});
-    }
-    if(isWalkable(node{row+1, col})){
-        neighbours.push_back(node{row+1, col});
-    }
-    if(isWalkable(node{row, col-1})){
-        neighbours.push_back(node{row, col-1});
-    }
-    if(isWalkable(node{row, col+1})){
-        neighbours.push_back(node{row, col+1});
+    if(isValid(position)){
+        if(isWalkable(node{row-1, col})){ //up
+            neighbours.push_back(node{row-1, col});
+        }
+        if(isWalkable(node{row+1, col})){ //down
+            neighbours.push_back(node{row+1, col});
+        }
+        if(isWalkable(node{row, col-1})){ // left
+            neighbours.push_back(node{row, col-1});
+        }
+        if(isWalkable(node{row, col+1})){ //right
+            neighbours.push_back(node{row, col+1});
+        }
     }
     return neighbours;
     
