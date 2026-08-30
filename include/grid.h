@@ -21,10 +21,10 @@ public:
                                  //    rows}
         }
     }
-    void print();
+    void print(); // print dis shi
     void setObstacle(node position); // for grid inititalisation
-    bool isValid(node position); // size validation
-    bool isWalkable(node position); // does a path even exist to the goal?
+    bool isValid(node position); // is this position within range?
+    bool isWalkable(node position); // can the agent walk through this position?
     vector<node> getNeighbors(node position); // neighbouring cells for current cell position
 
 };
