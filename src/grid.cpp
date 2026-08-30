@@ -1,6 +1,7 @@
 #include <iostream>
 #include "grid.h"
 #include "node.h"
+#include <vector>
 using namespace std;
 
 // print whole grid
@@ -37,6 +38,7 @@ bool grid::isWalkable(node position){
     else return false;
 
 }
+
 // takes a grid coordinate and
 // sets an obstacle (1) at that index
 void grid::setObstacle(node position){
@@ -46,4 +48,27 @@ void grid::setObstacle(node position){
     else{
         cout << "Indices ("<<position.row<<", "<<position.col<<") out of range\n";
     } 
+}
+
+
+// 4-directional neighbours of THIS node
+vector<node> getNeighbors(node position){
+    vector<node> neighbours; 
+    int row = position.row;
+    int col = position.col;
+
+    if(isWalkable(node{row-1, col})){
+        neighbours.push_back(node{row-1, col});
+    }
+    if(isWalkable(node{row+1, col})){
+        neighbours.push_back(node{row+1, col});
+    }
+    if(isWalkable(node{row, col-1})){
+        neighbours.push_back(node{row, col-1});
+    }
+    if(isWalkable(node{row, col+1})){
+        neighbours.push_back(node{row, col+1});
+    }
+    
+    
 }
