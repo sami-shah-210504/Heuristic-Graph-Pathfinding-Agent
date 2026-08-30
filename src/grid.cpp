@@ -35,7 +35,8 @@ bool grid::isWalkable(node position){
     }
 
 }
-
+// takes a grid coordinate and
+// sets an obstacle (1) at that index
 void grid::setObstacle(node position){
     // obstacle in grid is represented by 1
     if(isValid(position))
