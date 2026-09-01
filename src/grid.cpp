@@ -75,3 +75,10 @@ std::vector<node> grid::getNeighbors(node position){
     
     
 }
+
+int grid::getRows(){
+    return this->rows;
+}
+int grid::getCols(){
+    return this->cols;
+}

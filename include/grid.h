@@ -26,5 +26,8 @@ public:
     bool isValid(node position); // is this position within range?
     bool isWalkable(node position); // can the agent walk through this position?
     std::vector<node> getNeighbors(node position); // neighbouring cells for current cell position
+    // wonder what these do
+    int getRows();
+    int getCols();
 
 };
